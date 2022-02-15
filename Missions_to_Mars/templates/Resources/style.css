@@ -1,0 +1,12 @@
+body{
+    background: rgb(179, 228, 255);    
+}
+
+.border{
+    background: white;
+    padding:6%;
+    margin: 10px;
+    padding-right:6%;
+    min-height: min-content;
+    border:3px solid royalblue;
+}

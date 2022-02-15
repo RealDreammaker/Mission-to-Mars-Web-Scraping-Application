@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="../templates/Resources/reset.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../templates/Resources/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+    </section>
+    <br>
+    <!-- News -->
+    <section class="border">
+      <h3>Latest Mars News</h3>
+      <h4 class="alert alert-info" role="alert">{{scraped_data.news_title}}</h4>
+      <p class="alert alert-light" role="alert">{{scraped_data.news_p}}</p>
+    </section>
+    <br>
+    
+    <!-- Featured image -->
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6">
+            <h3>Featured Mars Image</h3>
+            <img class="img-fluid" src= "{{scraped_data.featured_image_url}}" alt="Featured Image">
+          </div>
+          <div class="col-6">
+            <h3>Mars Facts</h3>
+            <div>
+              {{ scraped_data.mars_fact|safe }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <hr>
+    <section>
+      <h3>Mars and Earth comparision</h3>
+      <div>
+        {{ scraped_data.mars_earth|safe }}
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h3>Mars Hemispheres</h3>
+        <div class="container-fluid">
+          <div class="row">
+            {% for url in scraped_data.hemisphere_image_urls %}
+            <div class="col-3">
+              <div class="card">
+                <div class="card-body">
+                  <img width=90% src= "{{url.img_url}}" alt="{{url.title}}">
+                  <h5>{{url.title}}</h5>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
+
