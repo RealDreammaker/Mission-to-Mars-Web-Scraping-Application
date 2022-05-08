@@ -12,23 +12,23 @@ In this assignment, I built a web application that scrapes various websites for 
 
 Initial scraping task were completed using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
-### NASA Mars News
+#### NASA Mars News
 
 * Scrape the [Mars News Site](https://redplanetscience.com/) and collect the latest News Title and Paragraph Text. 
 
-### JPL Mars Space Images - Featured Image
+#### JPL Mars Space Images - Featured Image
 
 * Visit the url for the [Featured Space Image site](https://spaceimages-mars.com).
 
 * Use splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable.
 
-### Mars Facts
+#### Mars Facts
 
 * Visit the [Mars Facts webpage](https://galaxyfacts-mars.com) and use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
 
 * Use Pandas to convert the data to a HTML table string.
 
-### Mars Hemispheres
+#### Mars Hemispheres
 
 * Visit the [astrogeology site](https://marshemispheres.com/) to obtain high resolution images for each of Mar's hemispheres.
 
@@ -38,7 +38,9 @@ Initial scraping task were completed using Jupyter Notebook, BeautifulSoup, Pand
 
 * Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
 <br>
-## Using MongoDB to achieve data and Flask Application to render web page
+<hr>
+
+##  Using MongoDB to achieve data and Flask Application to render web page
 
 Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
